@@ -1,96 +1,111 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Movimento Sem Dor</title>
-<style>
-  /* estilo básico */
-  .hidden {
-    display: none;
-  }
-  .container {
-    max-width: 720px;
-    margin: auto;
-    padding: 20px;
-  }
-  h1, h2 {
-    text-align: center;
-  }
-  video {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 20px;
-  }
-  .cta {
-    text-align: center;
-    margin: 30px 0;
-  }
-  .cta a {
-    background: #28a745;
-    color: #fff;
-    padding: 15px 25px;
-    text-decoration: none;
-    font-size: 18px;
-    border-radius: 5px;
-    display: inline-block;
-  }
-  .cta a:hover {
-    background: #218838;
-  }
-  footer {
-    text-align: center;
-    padding: 10px;
-    font-size: 12px;
-    color: #777;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Descubra como aliviar suas dores articulares de forma natural com nosso kit exclusivo.">
+  <meta property="og:title" content="Movimento Sem Dor">
+  <meta property="og:description" content="VSL exclusiva + depoimentos reais + ofertas imperdíveis.">
+  <meta property="og:image" content="https://via.placeholder.com/800x420.png?text=Movimento+Sem+Dor">
+  <title>Movimento Sem Dor</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      color: #222;
+    }
+    .container {
+      padding: 10px;
+      max-width: 480px;
+      margin: auto;
+    }
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      margin-bottom: 20px;
+    }
+    .video-wrapper iframe, .video-wrapper video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .cta-button {
+      display: none;
+      background-color: #28a745;
+      color: #fff;
+      font-size: 20px;
+      padding: 15px;
+      text-align: center;
+      border-radius: 8px;
+      text-decoration: none;
+      margin: 20px 0;
+      transition: background 0.3s;
+    }
+    .cta-button:hover {
+      background-color: #218838;
+    }
+    .depoimentos {
+      display: none;
+      margin-top: 30px;
+    }
+    video.depoimento {
+      width: 100%;
+      margin-bottom: 15px;
+      border-radius: 8px;
+    }
+    .play-overlay {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 20px;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1>Descubra como aliviar suas dores nas articulações</h1>
+    <h1 style="text-align:center">Movimento Sem Dor</h1>
+    <p style="text-align:center">Assista ao vídeo até o final para garantir sua oferta especial</p>
 
-    <!-- VSL -->
-    <video controls autoplay muted playsinline>
-  <source src="https://dl.dropboxusercontent.com/scl/fi/rn9h98wctr97kyuyi9skc/Validada-LIFE-Delay-45-40.mp4?rlkey=3pkicggwmtzfgn0n85crcrc10&st=406nev5s" type="video/mp4">
-  Seu navegador não suporta vídeos.
-</video>
-
-    </video>
-
-    <div id="cta" class="cta hidden">
-      <a href="https://seguro.payt.com.br/a/4LvbjQr7T7lrKvzV" target="_blank">Quero o Kit com Desconto</a>
+    <div class="video-wrapper">
+      <video id="vsl" autoplay muted playsinline>
+        <source src="https://dl.dropboxusercontent.com/scl/fi/rn9h98wctr97kyuyi9skc/Validada-LIFE-Delay-45-40.mp4?rlkey=3pkicggwmtzfgn0n85crcrc10&st=406nev5s" type="video/mp4">
+        Seu navegador não suporta o vídeo.
+      </video>
+      <div class="play-overlay" onclick="document.getElementById('vsl').muted = false; this.remove()">🔊 Tocar som</div>
     </div>
 
-    <h2 class="hidden" id="depoimentosTitle">Veja o que dizem nossos clientes</h2>
+    <a id="btn1" class="cta-button" href="https://seguro.payt.com.br/a/4LvbjQr7T7lrKvzV" target="_blank">🔥 Quero o Kit com Desconto</a>
 
-    <!-- Depoimentos ocultos -->
-    <div id="depoimentos" class="hidden">
-      <video controls>
-        <source src="https://dl.dropboxusercontent.com/scl/fi/a0blnoabucoqpa8n35ehr/3.mp4?rlkey=..." type="video/mp4">
+    <div class="depoimentos" id="depoimentos">
+      <h2 style="text-align:center">Veja o que dizem nossos clientes</h2>
+      <video class="depoimento" controls>
+        <source src="https://dl.dropboxusercontent.com/scl/fi/a0blnoabucoqpa8n35ehr/3.mp4?rlkey=74tso6djnu8n1xwck99cycabd&st=biua51kq" type="video/mp4">
       </video>
-      <video controls>
-        <source src="https://dl.dropboxusercontent.com/scl/fi/mgb7c0s5gownqy1hhakm5/4.mp4?rlkey=..." type="video/mp4">
+      <video class="depoimento" controls>
+        <source src="https://dl.dropboxusercontent.com/scl/fi/mgb7c0s5gownqy1hhakm5/4.mp4?rlkey=h2ywcwd1xui4vbk7pph3iomea&st=8jv8jebv" type="video/mp4">
       </video>
     </div>
   </div>
 
-  <footer>
-    &copy; 2025 Movimento Sem Dor. Todos os direitos reservados.
-  </footer>
-
   <script>
-    const video = document.getElementById('vslVideo');
-    const cta = document.getElementById('cta');
-    const depoimentosTitle = document.getElementById('depoimentosTitle');
+    const video = document.getElementById('vsl');
+    const btn1 = document.getElementById('btn1');
     const depoimentos = document.getElementById('depoimentos');
 
     video.addEventListener('timeupdate', () => {
-      if(video.currentTime >= 300) { // 300 segundos = 5 minutos
-        cta.classList.remove('hidden');
-        depoimentosTitle.classList.remove('hidden');
-        depoimentos.classList.remove('hidden');
+      if (video.currentTime > 2740) { // 45min 40seg = 2740 segundos
+        btn1.style.display = 'block';
+        depoimentos.style.display = 'block';
       }
     });
   </script>
