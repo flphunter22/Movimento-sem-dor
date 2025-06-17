@@ -82,7 +82,7 @@
         <source src="https://dl.dropboxusercontent.com/scl/fi/tpvc2aqp0q862vjo3n4eo/Vida_Sem_Dores_-_Receita_Life_-_Life_3-1.mp4?raw=1&rlkey=o85rpez3w5lap5lppie8u2gy0&st=27vojutr&dl=0">
         Seu navegador não suporta esse formato.
       </video>
-    </div>
+          </div>
 
     <div id="ofertas" class="ofertas" style="display:none">
       <img src="ofertas-life.jpg" alt="Ofertas">
@@ -103,7 +103,7 @@
     }
 
     document.getElementById('vsl').addEventListener('timeupdate', function() {
-      const delaySegundos = (42 * 60) + 50;
+      const delaySegundos = (2 * 60) + 50;
       if (this.currentTime >= delaySegundos && document.getElementById('ofertas').style.display === 'none') {
         document.getElementById('ofertas').style.display = 'block';
       }
