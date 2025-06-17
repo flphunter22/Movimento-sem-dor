@@ -1,129 +1,132 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content=device-width, initial-scale=1.0">
   <title>Movimento Sem Dor</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #fff;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
       color: #333;
     }
     .container {
-      max-width: 100%;
+      max-width: 720px;
       margin: auto;
-      padding: 10px;
+      padding: 20px;
     }
-    h1 {
-      font-size: 1.2rem;
+    .headline {
+      font-size: 22px;
+      font-weight: bold;
       text-align: center;
-      padding: 10px;
+      margin-bottom: 20px;
     }
-    .video-container {
+    .video-wrapper {
       position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: 10px;
+      width: 100%;
+      padding-top: 56.25%;
     }
-    .video-container video {
+    video {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
     }
-    .audio-button {
+    .audio-button, .play-button {
       position: absolute;
-      top: 10px;
-      right: 10px;
-      background: rgba(0,0,0,0.7);
+      z-index: 10;
+      background: rgba(0,0,0,0.6);
       color: #fff;
       border: none;
-      padding: 10px 15px;
       font-size: 16px;
+      padding: 10px 15px;
+      cursor: pointer;
       border-radius: 5px;
-      z-index: 10;
     }
-    .notice {
-      text-align: center;
-      font-size: 14px;
-      color: #555;
-      margin-bottom: 10px;
+    .audio-button {
+      top: 10px;
+      left: 10px;
     }
-    .cta, .cta-hidden {
-      text-align: center;
-      margin: 30px 0;
+    .play-button {
+      top: 10px;
+      right: 10px;
+    }
+    .cta, .testimonials {
       display: none;
+      text-align: center;
+      margin-top: 20px;
     }
     .cta a {
       background: #28a745;
-      color: #fff;
+      color: white;
       padding: 15px 25px;
       text-decoration: none;
       font-size: 18px;
       border-radius: 5px;
       display: inline-block;
     }
-    .cta a:hover {
-      background: #218838;
-    }
-    video.depoimento {
-      width: 100%;
-      margin-top: 15px;
-      border-radius: 10px;
-    }
-    footer {
+    .note {
       text-align: center;
-      padding: 10px;
-      font-size: 12px;
-      color: #777;
+      font-size: 16px;
+      margin-top: 10px;
+      color: #d00;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Conheça os 6 ingredientes anti-dores da Dra. Aline, apelidados de "cirurgia natural" por mais de 400 mil clientes.</h1>
-    <div class="notice">🔊 O vídeo já começou, ative o som!</div>
-    <div class="video-container">
-      <button class="audio-button" onclick="toggleMute()">🔊 Som</button>
-      <video id="vsl" autoplay muted playsinline controls poster="">
-        <source src="https://dl.dropboxusercontent.com/scl/fi/rn9h98wctr97kyuyi9skc/Validada-LIFE-Delay-45-40.mp4?rlkey=3pkicggwmtzfgn0n85crcrc10&st=406nev5s" type="video/mp4">
+    <div class="headline">
+      Conheça os 6 ingredientes anti-dores formulados pela Dra. Aline — apelidados de "cirurgia natural" por mais de 400.000 clientes que vivem sem dores e limitações.
+    </div>
+    <div class="video-wrapper">
+      <video id="vsl" preload="auto" autoplay muted playsinline>
+        <source src="https://www.dropbox.com/scl/fi/rn9h98wctr97kyuyi9skc/Validada-LIFE-Delay-45-40.mp4?rlkey=3pkicggwmtzfgn0n85crcrc10&raw=1" type="video/mp4">
         Seu navegador não suporta vídeos.
       </video>
+      <button class="audio-button" onclick="toggleAudio()">🔊 Som</button>
+      <button class="play-button" onclick="togglePlay()">⏯️ Play/Pause</button>
     </div>
-
+    <div class="note">O vídeo já começou, ative o som!</div>
     <div id="cta" class="cta">
       <a href="https://seguro.payt.com.br/a/4LvbjQr7T7lrKvzV" target="_blank">Quero o Kit com Desconto</a>
-
-      <video class="depoimento" controls>
+    </div>
+    <div id="testimonials" class="testimonials">
+      <video controls width="100%">
         <source src="https://dl.dropboxusercontent.com/scl/fi/a0blnoabucoqpa8n35ehr/3.mp4?rlkey=74tso6djnu8n1xwck99cycabd&st=biua51kq" type="video/mp4">
       </video>
-      <video class="depoimento" controls>
+      <video controls width="100%">
         <source src="https://dl.dropboxusercontent.com/scl/fi/mgb7c0s5gownqy1hhakm5/4.mp4?rlkey=h2ywcwd1xui4vbk7pph3iomea&st=8jv8jebv" type="video/mp4">
       </video>
     </div>
   </div>
 
-  <footer>
-    &copy; 2025 Movimento Sem Dor. Todos os direitos reservados.
-  </footer>
-
   <script>
     const video = document.getElementById("vsl");
     const cta = document.getElementById("cta");
+    const testimonials = document.getElementById("testimonials");
 
-    function toggleMute() {
+    video.controls = false;
+
+    function toggleAudio() {
       video.muted = !video.muted;
     }
 
-    video.addEventListener("timeupdate", () => {
-      // Mostra CTA após 45 min e 40 seg (2740 segundos)
-      if (video.currentTime >= 2740 && cta.style.display === "none") {
+    function togglePlay() {
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    }
+
+    video.addEventListener('timeupdate', () => {
+      if (video.currentTime >= 2740) {
         cta.style.display = "block";
+        testimonials.style.display = "block";
       }
     });
   </script>
