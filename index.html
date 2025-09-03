@@ -1,346 +1,352 @@
-<!doctype html>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Glow Life | Massageador Facial com Fototerapia Anti-Rugas</title>
-  <meta name="description" content="Massageador facial com fototerapia LED, vibração sônica e aquecimento. Reduz linhas finas, melhora firmeza da pele e contorno do pescoço. Envio rápido e garantia." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>✨</text></svg>">
-  <style>
-    :root { --brand:#ef4444; --brand-2:#10b981; }
-    html{scroll-behavior:smooth}
-    body{font-family:Poppins,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji"}
-    .container-xx{max-width:1200px;margin-inline:auto}
-    .shadow-soft{box-shadow:0 10px 30px rgba(0,0,0,.08)}
-    .badge{display:inline-flex;align-items:center;gap:.4rem;padding:.25rem .55rem;border-radius:9999px;font-size:.75rem;font-weight:600}
-    .glass{backdrop-filter:saturate(180%) blur(10px); background:rgba(255,255,255,.7)}
-    .rating:before{content:"★★★★★";letter-spacing:.3rem;background:linear-gradient(90deg,#f59e0b 80%,#e5e7eb 80%);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .floating-bar{position:fixed;left:0;right:0;bottom:0;z-index:50}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Massageador Facial LED - Pele Radiante e Saudável</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'rose-light': '#fdf2f8',
+                        'lilac': '#e879f9',
+                        'lilac-light': '#f3e8ff'
+                    },
+                    fontFamily: {
+                        'elegant': ['Georgia', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #fdf2f8 0%, #f3e8ff 100%);
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        [contenteditable="true"]:focus {
+            outline: 2px solid #ec4899;
+            outline-offset: 2px;
+        }
+    </style>
 </head>
-<body class="bg-white text-slate-800">
-  <!-- Top bar -->
-  <div class="w-full bg-slate-900 text-white text-sm">
-    <div class="container-xx py-2 px-4 flex items-center justify-between">
-      <p class="hidden md:block">Frete Grátis acima de R$ 149 • 7 dias para testar • Garantia de 90 dias</p>
-      <p class="md:hidden">Frete Grátis & Garantia</p>
-      <div class="flex items-center gap-3">
-        <span class="badge bg-white/10">Compra Segura 🔒</span>
-        <span class="badge bg-white/10">Pix • Cartão • Boleto</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Header -->
-  <header class="container-xx px-4 py-4 flex items-center justify-between">
-    <a href="#" class="flex items-center gap-2 font-semibold text-xl"><span class="text-2xl">✨</span> Glow <span class="text-[var(--brand)]">Life</span></a>
-    <nav class="hidden md:flex items-center gap-6 text-sm">
-      <a href="#beneficios" class="hover:text-[var(--brand)]">Benefícios</a>
-      <a href="#como-usar" class="hover:text-[var(--brand)]">Como usar</a>
-      <a href="#especificacoes" class="hover:text-[var(--brand)]">Especificações</a>
-      <a href="#avaliacoes" class="hover:text-[var(--brand)]">Avaliações</a>
-    </nav>
-    <div class="flex items-center gap-3">
-      <a href="#comprar" class="hidden sm:inline-flex items-center rounded-full bg-[var(--brand)] text-white px-4 py-2 text-sm font-semibold shadow-soft hover:opacity-95">Comprar agora</a>
-    </div>
-  </header>
-
-  <!-- Product hero -->
-  <section class="container-xx px-4 grid md:grid-cols-2 gap-8 md:gap-12 items-start">
-    <!-- Gallery -->
-    <div>
-      <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 shadow-soft">
-        <img id="mainImg" alt="Massageador facial Glow Life" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1200&auto=format&fit=crop" />
-      </div>
-      <div class="mt-3 grid grid-cols-5 gap-3">
-        <button class="thumb border-2 border-transparent rounded-xl overflow-hidden" data-src="https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1200&auto=format&fit=crop"><img class="w-full h-20 object-cover" src="https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=400&auto=format&fit=crop" alt="thumb 1"></button>
-        <button class="thumb border-2 border-transparent rounded-xl overflow-hidden" data-src="https://images.unsplash.com/photo-1556228453-0c2b6c98c1c2?q=80&w=1200&auto=format&fit=crop"><img class="w-full h-20 object-cover" src="https://images.unsplash.com/photo-1556228453-0c2b6c98c1c2?q=80&w=400&auto=format&fit=crop" alt="thumb 2"></button>
-        <button class="thumb border-2 border-transparent rounded-xl overflow-hidden" data-src="https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=1200&auto=format&fit=crop"><img class="w-full h-20 object-cover" src="https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=400&auto=format&fit=crop" alt="thumb 3"></button>
-        <button class="thumb border-2 border-transparent rounded-xl overflow-hidden" data-src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?q=80&w=1200&auto=format&fit=crop"><img class="w-full h-20 object-cover" src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?q=80&w=400&auto=format&fit=crop" alt="thumb 4"></button>
-        <button class="thumb border-2 border-transparent rounded-xl overflow-hidden" data-src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=1200&auto=format&fit=crop"><img class="w-full h-20 object-cover" src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=400&auto=format&fit=crop" alt="thumb 5"></button>
-      </div>
-    </div>
-
-    <!-- Buy box -->
-    <div class="sticky top-6">
-      <h1 class="text-2xl md:text-3xl font-bold leading-tight">Massageador Facial com Fototerapia <span class="text-[var(--brand)]">Anti-Rugas</span></h1>
-      <div class="mt-2 flex items-center gap-3 text-sm">
-        <div class="rating text-xl" aria-label="5 de 5"></div>
-        <span class="text-slate-500">(2.314 avaliações)</span>
-        <span class="badge bg-green-100 text-green-700">Mais vendido</span>
-      </div>
-
-      <div class="mt-5 p-4 rounded-2xl border shadow-soft">
-        <div class="flex items-end gap-3">
-          <p class="text-3xl font-extrabold text-slate-900">R$ 157,89</p>
-          <del class="text-slate-400">R$ 229,90</del>
-          <span class="badge bg-rose-100 text-rose-700">-31%</span>
+<body class="bg-white font-sans">
+    <!-- Hero Section -->
+    <section class="gradient-bg min-h-screen flex items-center" data-section="hero">
+        <div class="container mx-auto px-6 py-20">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 fade-in">
+                    <h1 class="text-5xl lg:text-6xl font-elegant text-gray-800 mb-6 leading-tight" contenteditable="true" data-editable="text">
+                        Transforme Sua <span class="text-pink-500" contenteditable="true">Pele</span> em Casa
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed" contenteditable="true" data-editable="text">
+                        Descubra o poder da tecnologia LED para uma pele mais jovem, radiante e saudável. Resultados visíveis em apenas 2 semanas.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-pink-500 hover:bg-pink-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg" contenteditable="true" data-editable="button">
+                            Quero Minha Pele Radiante ✨
+                        </button>
+                        <button class="border-2 border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300" contenteditable="true" data-editable="button">
+                            Ver Como Funciona
+                        </button>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 flex justify-center">
+                    <div class="floating">
+                        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                             alt="Mulher jovem sorrindo usando massageador facial LED" 
+                             class="rounded-3xl shadow-2xl w-full max-w-md"
+                             data-editable="image"
+                             onerror="this.src=''; this.alt='Imagem não disponível'; this.style.display='none';">
+                    </div>
+                </div>
+            </div>
         </div>
-        <p class="text-sm text-slate-500 mt-1">em até 12x · Pix com 5% OFF</p>
-        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <a id="comprar" href="#checkout" class="inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--brand)] text-white px-5 py-3 font-semibold shadow-soft hover:opacity-95">Comprar agora</a>
-          <button id="btnCart" class="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 text-white px-5 py-3 font-semibold shadow-soft hover:opacity-95">Adicionar ao carrinho</button>
-          <a href="https://wa.me/5500000000000?text=Quero%20o%20Massageador%20Facial%20Glow%20Life" class="col-span-full inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--brand-2)] text-white px-5 py-3 font-semibold shadow-soft">Tirar dúvidas no WhatsApp</a>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-20 bg-white" data-section="benefits">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-elegant text-gray-800 mb-4" contenteditable="true" data-editable="text">Tecnologia LED Avançada</h2>
+                <p class="text-xl text-gray-600" contenteditable="true" data-editable="text">Três tipos de luz para resultados completos</p>
+                <div class="mt-8 flex justify-center">
+                    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                         alt="Close no rosto de mulher usando massageador facial com luzes LED" 
+                         class="rounded-2xl shadow-lg max-w-sm"
+                         data-editable="image"
+                         onerror="this.src=''; this.alt='Imagem não disponível'; this.style.display='none';">
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-8 rounded-2xl bg-red-50 hover:shadow-lg transition-all duration-300" data-editable="card">
+                    <div class="w-20 h-20 bg-red-500 rounded-full mx-auto mb-6 flex items-center justify-center" data-editable="style">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="white">
+                            <path d="M20 5L25 15H35L27 22L30 32L20 27L10 32L13 22L5 15H15L20 5Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4" contenteditable="true" data-editable="text">Luz Vermelha</h3>
+                    <p class="text-gray-600" contenteditable="true" data-editable="text">Estimula a produção de colágeno, reduz rugas e linhas de expressão</p>
+                </div>
+                
+                <div class="text-center p-8 rounded-2xl bg-blue-50 hover:shadow-lg transition-all duration-300" data-editable="card">
+                    <div class="w-20 h-20 bg-blue-500 rounded-full mx-auto mb-6 flex items-center justify-center" data-editable="style">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="white">
+                            <circle cx="20" cy="20" r="15"/>
+                            <circle cx="20" cy="20" r="8" fill="none" stroke="white" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4" contenteditable="true" data-editable="text">Luz Azul</h3>
+                    <p class="text-gray-600" contenteditable="true" data-editable="text">Combate bactérias causadoras da acne e purifica os poros</p>
+                </div>
+                
+                <div class="text-center p-8 rounded-2xl bg-green-50 hover:shadow-lg transition-all duration-300" data-editable="card">
+                    <div class="w-20 h-20 bg-green-500 rounded-full mx-auto mb-6 flex items-center justify-center" data-editable="style">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="white">
+                            <path d="M20 2L22 18L38 20L22 22L20 38L18 22L2 20L18 18Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4" contenteditable="true" data-editable="text">Luz Verde</h3>
+                    <p class="text-gray-600" contenteditable="true" data-editable="text">Uniformiza o tom da pele e reduz manchas e hiperpigmentação</p>
+                </div>
+            </div>
         </div>
-        <ul class="mt-4 grid sm:grid-cols-3 gap-2 text-sm text-slate-600">
-          <li class="flex items-center gap-2">🚚 Frete Grátis</li>
-          <li class="flex items-center gap-2">🔒 Compra Segura</li>
-          <li class="flex items-center gap-2">💳 Pagamento em até 12x</li>
-        </ul>
-      </div>
+    </section>
 
-      <div class="mt-6 space-y-3 text-sm">
-        <div class="flex gap-3">
-          <span>•</span>
-          <p>Fototerapia LED (vermelho, azul, verde, amarelo) para estímulos específicos na pele.</p>
+    <!-- How to Use Section -->
+    <section class="py-20 bg-gray-50" data-section="tutorial">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-elegant text-gray-800 mb-4" contenteditable="true" data-editable="text">Como Usar</h2>
+                <p class="text-xl text-gray-600" contenteditable="true" data-editable="text">Simples e eficaz em apenas 3 passos</p>
+                <div class="mt-8 flex justify-center">
+                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                         alt="Mulher aplicando massageador facial no rosto passo a passo" 
+                         class="rounded-2xl shadow-lg max-w-sm"
+                         data-editable="image"
+                         onerror="this.src=''; this.alt='Imagem não disponível'; this.style.display='none';">
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center" data-editable="step">
+                    <div class="w-24 h-24 bg-pink-500 rounded-full mx-auto mb-6 flex items-center justify-center text-white text-3xl font-bold" data-editable="style">1</div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4" contenteditable="true" data-editable="text">Limpe a Pele</h3>
+                    <p class="text-gray-600" contenteditable="true" data-editable="text">Remova maquiagem e impurezas para melhor absorção da luz</p>
+                </div>
+                
+                <div class="text-center" data-editable="step">
+                    <div class="w-24 h-24 bg-pink-500 rounded-full mx-auto mb-6 flex items-center justify-center text-white text-3xl font-bold" data-editable="style">2</div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4" contenteditable="true" data-editable="text">Escolha o Modo</h3>
+                    <p class="text-gray-600" contenteditable="true" data-editable="text">Selecione a cor da luz ideal para sua necessidade</p>
+                </div>
+                
+                <div class="text-center" data-editable="step">
+                    <div class="w-24 h-24 bg-pink-500 rounded-full mx-auto mb-6 flex items-center justify-center text-white text-3xl font-bold" data-editable="style">3</div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4" contenteditable="true" data-editable="text">Massageie</h3>
+                    <p class="text-gray-600" contenteditable="true" data-editable="text">Use por 10-15 minutos com movimentos circulares suaves</p>
+                </div>
+            </div>
         </div>
-        <div class="flex gap-3">
-          <span>•</span>
-          <p>Vibração sônica + aquecimento suave (42ºC) para potencializar absorção de cremes.</p>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white" data-section="testimonials">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-elegant text-gray-800 mb-4" contenteditable="true" data-editable="text">O Que Nossas Clientes Dizem</h2>
+                <div class="flex justify-center mb-4">
+                    <div class="flex text-yellow-400 text-2xl" contenteditable="true" data-editable="rating">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+                </div>
+                <p class="text-xl text-gray-600" contenteditable="true" data-editable="text">Mais de 10.000 mulheres satisfeitas</p>
+                <div class="mt-8 flex justify-center">
+                    <img src="https://images.unsplash.com/photo-1594824804732-ca8db7d1457c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                         alt="Mulher feliz com pele radiante e sorriso natural" 
+                         class="rounded-2xl shadow-lg max-w-sm"
+                         data-editable="image"
+                         onerror="this.src=''; this.alt='Imagem não disponível'; this.style.display='none';">
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-rose-light p-8 rounded-2xl" data-editable="testimonial">
+                    <div class="flex text-yellow-400 mb-4" contenteditable="true" data-editable="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-700 mb-6 italic" contenteditable="true" data-editable="text">"Em 3 semanas minha pele ficou muito mais lisa e as manchas diminuíram visivelmente. Recomendo!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-pink-300 rounded-full flex items-center justify-center text-white font-semibold" contenteditable="true" data-editable="initial">M</div>
+                        <div class="ml-4">
+                            <p class="font-semibold text-gray-800" contenteditable="true" data-editable="text">Maria Silva</p>
+                            <p class="text-gray-600 text-sm" contenteditable="true" data-editable="text">São Paulo, SP</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-lilac-light p-8 rounded-2xl" data-editable="testimonial">
+                    <div class="flex text-yellow-400 mb-4" contenteditable="true" data-editable="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-700 mb-6 italic" contenteditable="true" data-editable="text">"Minha acne melhorou muito! O aparelho é fácil de usar e os resultados aparecem rápido."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-purple-300 rounded-full flex items-center justify-center text-white font-semibold" contenteditable="true" data-editable="initial">A</div>
+                        <div class="ml-4">
+                            <p class="font-semibold text-gray-800" contenteditable="true" data-editable="text">Ana Costa</p>
+                            <p class="text-gray-600 text-sm" contenteditable="true" data-editable="text">Rio de Janeiro, RJ</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-rose-light p-8 rounded-2xl" data-editable="testimonial">
+                    <div class="flex text-yellow-400 mb-4" contenteditable="true" data-editable="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-700 mb-6 italic" contenteditable="true" data-editable="text">"Adorei! Minha pele está mais firme e radiante. Vale cada centavo investido."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-pink-300 rounded-full flex items-center justify-center text-white font-semibold" contenteditable="true" data-editable="initial">C</div>
+                        <div class="ml-4">
+                            <p class="font-semibold text-gray-800" contenteditable="true" data-editable="text">Carla Oliveira</p>
+                            <p class="text-gray-600 text-sm" contenteditable="true" data-editable="text">Belo Horizonte, MG</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="flex gap-3">
-          <span>•</span>
-          <p>Design ergonômico que se ajusta ao rosto e pescoço.</p>
+    </section>
+
+    <!-- Offer Section -->
+    <section class="py-20 gradient-bg" data-section="offer">
+        <div class="container mx-auto px-6 text-center">
+            <div class="bg-white rounded-3xl p-12 shadow-2xl max-w-4xl mx-auto">
+                <div class="bg-red-500 text-white px-6 py-2 rounded-full inline-block mb-6 text-lg font-semibold" contenteditable="true" data-editable="badge">
+                    🔥 OFERTA LIMITADA
+                </div>
+                <h2 class="text-4xl font-elegant text-gray-800 mb-6" contenteditable="true" data-editable="text">Massageador Facial LED</h2>
+                
+                <div class="mb-8 flex justify-center">
+                    <img src="https://images.unsplash.com/photo-1612817288484-6f916006741a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" 
+                         alt="Massageador facial LED em destaque com selo de promoção" 
+                         class="rounded-2xl shadow-lg max-w-xs floating"
+                         data-editable="image"
+                         onerror="this.src=''; this.alt='Imagem não disponível'; this.style.display='none';">
+                </div>
+                
+                <div class="flex justify-center items-center mb-8" data-editable="pricing">
+                    <span class="text-3xl text-gray-400 line-through mr-4" contenteditable="true" data-editable="old-price">R$ 297,00</span>
+                    <span class="text-5xl font-bold text-pink-500" contenteditable="true" data-editable="new-price">R$ 197,00</span>
+                </div>
+                
+                <div class="bg-green-100 border border-green-300 rounded-lg p-4 mb-8" data-editable="benefits">
+                    <p class="text-green-800 font-semibold" contenteditable="true" data-editable="text">✅ Frete GRÁTIS para todo o Brasil</p>
+                    <p class="text-green-800 font-semibold" contenteditable="true" data-editable="text">✅ Garantia de 30 dias</p>
+                    <p class="text-green-800 font-semibold" contenteditable="true" data-editable="text">✅ Parcelamento em até 12x sem juros</p>
+                </div>
+                
+                <button class="bg-pink-500 hover:bg-pink-600 text-white px-12 py-6 rounded-full text-2xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg mb-4 w-full md:w-auto" contenteditable="true" data-editable="cta-button">
+                    COMPRAR AGORA 🛒
+                </button>
+                
+                <p class="text-gray-600 text-sm" contenteditable="true" data-editable="text">⏰ Restam apenas 47 unidades com desconto</p>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Trust signals -->
-  <section class="container-xx px-4 mt-12">
-    <div class="grid sm:grid-cols-3 gap-4">
-      <div class="p-5 rounded-2xl border shadow-soft">
-        <p class="font-semibold">Garantia de Satisfação</p>
-        <p class="text-sm text-slate-600">Teste por 7 dias. Se não amar, devolvemos seu dinheiro.</p>
-      </div>
-      <div class="p-5 rounded-2xl border shadow-soft">
-        <p class="font-semibold">Entrega Rastreada</p>
-        <p class="text-sm text-slate-600">Acompanhe cada etapa até sua casa.</p>
-      </div>
-      <div class="p-5 rounded-2xl border shadow-soft">
-        <p class="font-semibold">Atendimento Real</p>
-        <p class="text-sm text-slate-600">Suporte humanizado no WhatsApp.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Benefícios -->
-  <section id="beneficios" class="container-xx px-4 mt-14 grid md:grid-cols-2 gap-10 items-center">
-    <div>
-      <h2 class="text-2xl font-bold">Experimente uma Revolução no Cuidado Facial</h2>
-      <ul class="mt-4 space-y-3 text-slate-700">
-        <li>✔️ Reduz linhas finas e marcas de expressão</li>
-        <li>✔️ Melhora a firmeza e elasticidade</li>
-        <li>✔️ Suaviza manchas e textura irregular</li>
-        <li>✔️ Ajuda na drenagem e contorno do queixo e pescoço</li>
-      </ul>
-      <a href="#comprar" class="mt-6 inline-flex items-center rounded-xl bg-slate-900 text-white px-5 py-3 font-semibold shadow-soft">Quero o meu</a>
-    </div>
-    <div class="rounded-2xl overflow-hidden shadow-soft">
-      <img alt="Demonstração de uso" src="https://images.unsplash.com/photo-1616394584738-fc6e612e2f07?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover" />
-    </div>
-  </section>
-
-  <!-- Cores LED -->
-  <section class="container-xx px-4 mt-16">
-    <h3 class="text-xl font-bold">Dermatologistas ❤️ Fototerapia</h3>
-    <div class="mt-6 grid sm:grid-cols-4 gap-4 text-sm">
-      <div class="p-4 rounded-2xl border shadow-soft">
-        <p class="font-semibold">Vermelho</p>
-        <p>Estimula colágeno e firmeza.</p>
-      </div>
-      <div class="p-4 rounded-2xl border shadow-soft">
-        <p class="font-semibold">Azul</p>
-        <p>Ação calmante e antiacne.</p>
-      </div>
-      <div class="p-4 rounded-2xl border shadow-soft">
-        <p class="font-semibold">Verde</p>
-        <p>Ajuda a uniformizar o tom.</p>
-      </div>
-      <div class="p-4 rounded-2xl border shadow-soft">
-        <p class="font-semibold">Amarelo</p>
-        <p>Ilumina e revitaliza a pele.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Como usar -->
-  <section id="como-usar" class="container-xx px-4 mt-16 grid md:grid-cols-2 gap-10 items-center">
-    <div class="rounded-2xl overflow-hidden shadow-soft order-2 md:order-1">
-      <img alt="Como usar" src="https://images.unsplash.com/photo-1604014237800-1c9102c6bc2b?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover" />
-    </div>
-    <div class="order-1 md:order-2">
-      <h2 class="text-2xl font-bold">Como usar</h2>
-      <ol class="mt-4 space-y-3 text-slate-700 list-decimal list-inside">
-        <li>Limpe o rosto e aplique seu sérum ou creme favorito.</li>
-        <li>Escolha a cor LED e ative vibração/aquecimento.</li>
-        <li>Deslize por bochechas, testa, pescoço e queixo por 5–10 min.</li>
-        <li>Use de 3 a 5x por semana para melhores resultados.</li>
-      </ol>
-      <p class="text-sm text-slate-500 mt-3">*Indicado para todos os tipos de pele. Consulte seu dermatologista em caso de condições específicas.</p>
-    </div>
-  </section>
-
-  <!-- Especificações -->
-  <section id="especificacoes" class="container-xx px-4 mt-16">
-    <h2 class="text-2xl font-bold">Especificações</h2>
-    <div class="mt-4 grid sm:grid-cols-2 gap-6 text-sm">
-      <ul class="space-y-2 text-slate-700">
-        <li>• Potência: 5W | Entrada: 5V USB-C</li>
-        <li>• Temperatura de aquecimento: 42ºC</li>
-        <li>• Modos: LED R/A/V/Am + Vibração sônica</li>
-        <li>• Bateria: 700mAh (até 60 min)</li>
-      </ul>
-      <ul class="space-y-2 text-slate-700">
-        <li>• Material: ABS + aço inox</li>
-        <li>• Peso: ~140g</li>
-        <li>• Conteúdo: aparelho, cabo USB-C, manual</li>
-        <li>• Garantia: 90 dias contra defeitos</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Depoimentos -->
-  <section id="avaliacoes" class="container-xx px-4 mt-16">
-    <div class="flex items-end justify-between">
-      <h2 class="text-2xl font-bold">Avaliações de Clientes</h2>
-      <div class="text-sm text-slate-600">Média 5.0 • 2.314 avaliações</div>
-    </div>
-    <div class="mt-6 grid md:grid-cols-3 gap-6">
-      <!-- Card -->
-      <article class="p-5 rounded-2xl border shadow-soft">
-        <div class="flex items-center gap-2 text-amber-500">★★★★★ <span class="text-xs text-slate-500">(Compra verificada)</span></div>
-        <p class="mt-2">Chegou rápido! Senti a pele mais firme em 2 semanas. A luz vermelha é sensacional.</p>
-        <div class="mt-3 grid grid-cols-3 gap-2 rounded-xl overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e2f07?q=80&w=400&auto=format&fit=crop" alt="review"/>
-          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193f658?q=80&w=400&auto=format&fit=crop" alt="review"/>
-          <img src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?q=80&w=400&auto=format&fit=crop" alt="review"/>
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white" data-section="faq">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-elegant text-gray-800 mb-4" contenteditable="true" data-editable="text">Perguntas Frequentes</h2>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-6">
+                    <div class="border border-gray-200 rounded-lg p-6" data-editable="faq-item">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3" contenteditable="true" data-editable="question">⏱️ Quanto tempo devo usar por dia?</h3>
+                        <p class="text-gray-600" contenteditable="true" data-editable="answer">Recomendamos usar por 10-15 minutos diariamente para melhores resultados.</p>
+                    </div>
+                    
+                    <div class="border border-gray-200 rounded-lg p-6" data-editable="faq-item">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3" contenteditable="true" data-editable="question">🛡️ É seguro para todos os tipos de pele?</h3>
+                        <p class="text-gray-600" contenteditable="true" data-editable="answer">Sim! A tecnologia LED é segura e adequada para todos os tipos de pele.</p>
+                    </div>
+                    
+                    <div class="border border-gray-200 rounded-lg p-6" data-editable="faq-item">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3" contenteditable="true" data-editable="question">📦 Qual é o prazo de entrega?</h3>
+                        <p class="text-gray-600" contenteditable="true" data-editable="answer">Entregamos em todo o Brasil em até 7 dias úteis com frete grátis.</p>
+                    </div>
+                    
+                    <div class="border border-gray-200 rounded-lg p-6" data-editable="faq-item">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3" contenteditable="true" data-editable="question">💎 Quando verei os primeiros resultados?</h3>
+                        <p class="text-gray-600" contenteditable="true" data-editable="answer">Os primeiros resultados aparecem em 1-2 semanas de uso regular.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <p class="mt-2 text-sm text-slate-500">— Maria S.</p>
-      </article>
-      <article class="p-5 rounded-2xl border shadow-soft">
-        <div class="flex items-center gap-2 text-amber-500">★★★★★ <span class="text-xs text-slate-500">(Compra verificada)</span></div>
-        <p class="mt-2">Uso antes de dormir e acordo com a pele mais descansada. Ótimo custo-benefício.</p>
-        <p class="mt-2 text-sm text-slate-500">— Camila R.</p>
-      </article>
-      <article class="p-5 rounded-2xl border shadow-soft">
-        <div class="flex items-center gap-2 text-amber-500">★★★★★ <span class="text-xs text-slate-500">(Compra verificada)</span></div>
-        <p class="mt-2">Atendimento excelente no WhatsApp, tiraram todas as dúvidas. Recomendo!</p>
-        <p class="mt-2 text-sm text-slate-500">— Isaias F.</p>
-      </article>
-    </div>
-  </section>
+    </section>
 
-  <!-- FAQ / Dúvidas -->
-  <section class="container-xx px-4 mt-16">
-    <h2 class="text-2xl font-bold">Dúvidas Frequentes</h2>
-    <div class="mt-4 divide-y rounded-2xl border overflow-hidden">
-      <details class="group p-5" open>
-        <summary class="cursor-pointer font-semibold flex items-center justify-between">É indicado para todos os tipos de pele? <span>＋</span></summary>
-        <p class="mt-2 text-slate-700">Sim. Em casos específicos (rosácea severa, pós-procedimento), consulte seu dermatologista.</p>
-      </details>
-      <details class="group p-5">
-        <summary class="cursor-pointer font-semibold flex items-center justify-between">Posso usar com qualquer creme? <span>＋</span></summary>
-        <p class="mt-2 text-slate-700">Dê preferência a séruns/cremes leves. Evite esfoliantes químicos no mesmo momento.</p>
-      </details>
-      <details class="group p-5">
-        <summary class="cursor-pointer font-semibold flex items-center justify-between">Quanto tempo para ver resultado? <span>＋</span></summary>
-        <p class="mt-2 text-slate-700">A maioria percebe melhora de textura em 2–4 semanas com uso consistente.</p>
-      </details>
-    </div>
-  </section>
-
-  <!-- Checkout/Seals -->
-  <section id="checkout" class="container-xx px-4 mt-16">
-    <div class="grid md:grid-cols-2 gap-6 items-center">
-      <div class="p-6 rounded-2xl border shadow-soft">
-        <h3 class="text-xl font-bold">Finalize sua compra com segurança</h3>
-        <ul class="mt-3 grid grid-cols-2 gap-2 text-sm text-slate-700">
-          <li>• Pix com 5% de desconto</li>
-          <li>• Cartão em até 12x</li>
-          <li>• Boleto bancário</li>
-          <li>• Envio com rastreio</li>
-        </ul>
-        <a href="#comprar" class="mt-4 inline-flex items-center rounded-xl bg-[var(--brand)] text-white px-5 py-3 font-semibold shadow-soft">Comprar agora</a>
-      </div>
-      <div class="p-6 rounded-2xl border shadow-soft">
-        <p class="font-semibold">Selos de segurança</p>
-        <div class="mt-4 grid grid-cols-4 gap-4 opacity-80">
-          <img alt="ssl" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Comodo_SSL_logo.svg/512px-Comodo_SSL_logo.svg.png"/>
-          <img alt="pix" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Pix_logo.svg/768px-Pix_logo.svg.png"/>
-          <img alt="visa" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Visa_2021.svg/512px-Visa_2021.svg.png"/>
-          <img alt="master" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/512px-Mastercard-logo.svg.png"/>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12" data-section="footer">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-2xl font-elegant mb-4" contenteditable="true" data-editable="text">Beleza & Tecnologia</h3>
+            <p class="text-gray-400 mb-6" contenteditable="true" data-editable="text">Transformando vidas através do cuidado com a pele</p>
+            <div class="flex justify-center space-x-6 mb-6">
+                <span class="text-gray-400" contenteditable="true" data-editable="contact">📧 contato@belezatecnologia.com</span>
+                <span class="text-gray-400" contenteditable="true" data-editable="contact">📱 (11) 99999-9999</span>
+            </div>
+            <p class="text-gray-500 text-sm" contenteditable="true" data-editable="text">© 2024 Beleza & Tecnologia. Todos os direitos reservados.</p>
         </div>
-      </div>
-    </div>
-  </section>
+    </footer>
 
-  <!-- Footer -->
-  <footer class="mt-20 bg-slate-50 border-t">
-    <div class="container-xx px-4 py-10 grid md:grid-cols-4 gap-8 text-sm">
-      <div>
-        <a class="font-semibold text-lg" href="#">✨ Glow <span class="text-[var(--brand)]">Life</span></a>
-        <p class="mt-3 text-slate-600">Cuidado inteligente para sua pele, sem complicação.</p>
-      </div>
-      <div>
-        <p class="font-semibold">Institucional</p>
-        <ul class="mt-2 space-y-2 text-slate-600">
-          <li><a href="#">Sobre nós</a></li>
-          <li><a href="#">Política de Privacidade</a></li>
-          <li><a href="#">Trocas e Devoluções</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="font-semibold">Atendimento</p>
-        <ul class="mt-2 space-y-2 text-slate-600">
-          <li>Seg–Sex, 9h–18h</li>
-          <li>WhatsApp: (00) 00000‑0000</li>
-          <li>Email: suporte@glowlife.com</li>
-        </ul>
-      </div>
-      <div>
-        <p class="font-semibold">Receba novidades</p>
-        <form class="mt-2 flex gap-2" onsubmit="event.preventDefault(); alert('Inscrito com sucesso!');">
-          <input type="email" required placeholder="seu@email.com" class="flex-1 px-3 py-2 rounded-xl border focus:outline-none">
-          <button class="px-4 py-2 rounded-xl bg-slate-900 text-white">Quero</button>
-        </form>
-      </div>
-    </div>
-    <div class="text-center text-xs text-slate-500 pb-8">© <span id="year"></span> Glow Life. Todos os direitos reservados.</div>
-  </footer>
+    <script>
+        // Smooth scrolling for buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function() {
+                if (this.textContent.includes('Ver Como Funciona')) {
+                    document.querySelector('section:nth-of-type(3)').scrollIntoView({ 
+                        behavior: 'smooth' 
+                    });
+                }
+            });
+        });
 
-  <!-- Floating cart / mobile CTA -->
-  <div class="floating-bar glass border-t md:hidden">
-    <div class="container-xx px-4 py-3 flex items-center justify-between gap-3">
-      <div>
-        <p class="text-xs text-slate-500">Total</p>
-        <p class="text-lg font-bold">R$ 157,89</p>
-      </div>
-      <a href="#comprar" class="inline-flex items-center justify-center rounded-xl bg-[var(--brand)] text-white px-5 py-3 font-semibold">Comprar</a>
-    </div>
-  </div>
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-  <script>
-    // Thumbnails -> main image
-    document.querySelectorAll('.thumb').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.thumb').forEach(b => b.classList.remove('border-[var(--brand)]'))
-        btn.classList.add('border-[var(--brand)]')
-        document.getElementById('mainImg').src = btn.dataset.src
-      })
-    })
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
 
-    // Fake add to cart
-    document.getElementById('btnCart').addEventListener('click', () => {
-      alert('Produto adicionado ao carrinho! (exemplo)')
-    })
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
 
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear()
-  </script>
-</body>
+        // Pagefy compatibility - prevent default behavior on contenteditable elements
+        document.querySelectorAll('[contenteditable="true"]').forEach(element => {
+            element.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9796485ee7a46485',t:'MTc1NjkxMzM2Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
